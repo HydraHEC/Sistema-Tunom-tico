@@ -47,4 +47,45 @@ La elección de los patrones de diseño no fue arbitraria, sino estratégica y a
 Se seleccionó Singleton para la **gestión centralizada de parámetros críticos del sistema** como la única instancia central que controla la lógica de turnos (crear, atender, almacenar), permitiendo un acceso global y control unificado sobre la gestión de turnos, evitando duplicaciones.
 Este patrón permite garantizar que **exista una única instancia accesible globalmente**, evitando inconsistencias y facilitando la administración de la configuración desde cualquier módulo del sistema.
 
+#### Intención arquitectónica:
+- Centralizar el control de la configuración.
+- Facilitar la escalabilidad futura permitiendo la consulta distribuida.
+- Evitar múltiples puntos de configuración que pudieran provocar errores operacionales.
 
+---
+
+### **2. Prototype (`Turno`)**
+#### Justificación:
+Se implementó Prototype para **permitir la clonación de plantillas de movimientos frecuentes**, como vendria a ser la funcion y uso de los turnos en un servicio requiere que posean caracteristicas similares siendo objetos independientes producidos constantemente, clonando una instancia base (TurnoNormal) para generar nuevas copias sin tener que crear cada una desde cero.
+
+#### Intención arquitectónica:
+- Reducir la complejidad y tiempo de operaciones manuales.
+- Permitir la creación rápida de nuevas instancias de movimientos desde plantillas base, manteniendo flexibilidad y control.
+- Mejorar el rendimiento automatizando configuraciones repetitivas.
+
+---
+
+### **3. Adapter (`AdaptadorEmail`)**
+#### Justificación:
+Dado que el sistema necesita comunicarse con un servicio externo de email (ServicioEmail) cuya interfaz no es compatible directamente con la del sistema, el uso de Adapter fue clave para adaptar (valga la redundancia) esa clase externa a la interfaz esperada por el sistema (Notificador), permitiendo reutilizar código existente de terceros (como lo es un servicio de correo) sin modificar su lógica interna.
+
+#### Intención arquitectónica:
+- Asegurar la independencia tecnológica del sistema interno.
+- Facilitar el mantenimiento y evolución del sistema de integración.
+- Permitir la adaptación a distintos sistemas externos (Email en este caso) sin impactar el dominio.
+
+---
+
+### **4. Bridge (`TotemTurno`)**
+#### Justificación:
+Considerando la indefinida cantidad de clientes que usaran este sistema, se aplicó Bridge para **separar la interfaz de usuario de la lógica de negocio**, permitiendo adaptar la experiencia según el perfil del usuario y el dispositivo utilizado, sin afectar la lógica central del sistema, ya que cuenta con distintas interfaces visuales (Web, LCD). Permitiendonos a futuro cambiar o agregar nuevas interfaces visuales sin afectar la lógica del sistema de turnos.
+
+#### Intención arquitectónica:
+- Flexibilizar las vistas según necesidades operativas.
+- Garantizar independencia entre interfaz y lógica.
+- Facilitar futuras integraciones con nuevas plataformas (app, mensajeria, asistente virtual, etc).
+
+---
+
+## 🔹 3. Diagrama de Implementación UML
+![image](Imagenes/DiagramaDespliegue2_Patrones_U2.png)
