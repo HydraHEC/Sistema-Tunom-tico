@@ -12,4 +12,8 @@ este proyecto consiste de un Sistema Completo de Gestion de **Turnos Digitales**
 - Comprender la importancia de la trazabilidad entre visión funcional, lógica y física.
 - Acostumbrarme a estándares de documentación de alto nivel, y modelar como lo haría un arquitecto senior en la industria real.
 
-
+## 🔹 1. Diagrama de Casos de Uso UML
+![image](Imagenes/DiagramaCasoUso_Patrones_U2.png)
+### Descripción general
+El análisis funcional permitió identificar con claridad los actores involucrados y las funcionalidades críticas del sistema. Además, se aplicaron correctamente **relaciones de `<<include>>` y `<<extend>>`** para reflejar flujos obligatorios y opcionales en el proceso.
+#### Actores identificados:
