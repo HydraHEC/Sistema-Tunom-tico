@@ -89,3 +89,17 @@ Considerando la indefinida cantidad de clientes que usaran este sistema, se apli
 
 ## 🔹 3. Diagrama de Implementación UML
 ![image](Imagenes/DiagramaDespliegue2_Patrones_U2.png)
+
+### Despliegue Físico y decisiones técnicas:
+- **Nodos físicos diferenciados** para reforzar seguridad, escalabilidad y disponibilidad.
+- Separación clara de responsabilidades entre servidores de aplicaciones, configuración, y bases de datos.
+- Aislamiento de componentes críticos (como la `Aplicacion del Administrador`) para reforzar la seguridad y el control de cambios y configuración.
+
+---
+
+## 🧩 Reflexiones Finales del Modelado
+
+Este ejercicio refleja una aproximación arquitectónica profesional donde:
+- Cada patrón fue seleccionado según necesidades específicas y no como elemento decorativo.
+- La transición entre **caso de uso ➡ diagrama de clases ➡ implementación** permitió mantener una trazabilidad clara desde el negocio hasta la infraestructura.
+- La modularización y aplicación de patrones permitieron diseñar un sistema robusto, flexible, mantenible y alineado a buenas prácticas de ingeniería de software.
