@@ -35,16 +35,16 @@ El análisis funcional permitió identificar con claridad los actores involucrad
 - Se utilizo el `<<exclude>>` en procesos donde las acciones son **condicionadas o opcionales**, como **Configurar salida de Notificaciones** donde el Administrador tiene la alternativa de configurar el medio de salida de las notificaciones despues de ver el historial de notificaciones/mensajes enviadas al registro.
 
 ## 🔹 2. Diagrama de Clases UML con Patrones Aplicados
-![image](Imagenes/DiagramaClases_Patrones_U2.png)
+![image](Imagenes/DiagramaClases2_Patrones_U2.png)
 
 ## 🧩 Justificación Arquitectónica y Patrones Aplicados
 
 ### Selección de patrones
 La elección de los patrones de diseño no fue arbitraria, sino estratégica y alineada a las necesidades específicas del sistema y sus desafíos técnicos:
 
-### **1. Singleton (`ConfiguracionSistema`)**
+### **1. Singleton (`TurnoManager`)**
 #### Justificación:
-Se seleccionó Singleton para la **gestión centralizada de parámetros críticos del sistema**, como tiempos de vencimiento, stock mínimo, tipos de alerta, entre otros.  
+Se seleccionó Singleton para la **gestión centralizada de parámetros críticos del sistema** como la única instancia central que controla la lógica de turnos (crear, atender, almacenar), permitiendo un acceso global y control unificado sobre la gestión de turnos, evitando duplicaciones.
 Este patrón permite garantizar que **exista una única instancia accesible globalmente**, evitando inconsistencias y facilitando la administración de la configuración desde cualquier módulo del sistema.
 
 
