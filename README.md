@@ -13,7 +13,11 @@ este proyecto consiste de un Sistema Completo de Gestion de **Turnos Digitales**
 - Acostumbrarme a estándares de documentación de alto nivel, y modelar como lo haría un arquitecto senior en la industria real.
 
 ## 🔹 1. Diagrama de Casos de Uso UML
-![image](Imagenes/DiagramaCasoUso_Patrones_U2.png)
+![image](Imagenes/DiagramaCaso3_Patrones_U2.png)
 ### Descripción general
 El análisis funcional permitió identificar con claridad los actores involucrados y las funcionalidades críticas del sistema. Además, se aplicaron correctamente **relaciones de `<<include>>` y `<<extend>>`** para reflejar flujos obligatorios y opcionales en el proceso.
 #### Actores identificados:
+- **Usuario**: la persona que quiere un turno para ser atendido
+- **Totem**: la maquina que genera turnos y provee una boleta impresa
+- **Empleado**: aquel que atiende al usuario en el servicio que quiere/necesita
+- **Administrador**: 
